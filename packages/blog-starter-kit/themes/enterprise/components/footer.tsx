@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import { useAppContext } from './contexts/appContext';
 import { SocialLinks } from './social-links';
 
 export const Footer = () => {
 	const { publication } = useAppContext();
 	const PUBLICATION_LOGO = publication.preferences.logo;
+	const VALID8_BASE_URL = 'https://valid8code.ai';
 	return (
 		<footer className="border-t border-slate-800 bg-slate-950 py-12">
 			<div className="container mx-auto px-4">
@@ -13,15 +13,17 @@ export const Footer = () => {
 					<div className="md:col-span-2">
 						<div className="mb-4 flex items-center gap-2">
 							{PUBLICATION_LOGO ? (
-								<img
-									src={PUBLICATION_LOGO}
-									alt={publication.title}
-									className="h-8 w-auto object-contain"
-								/>
+								<a href={VALID8_BASE_URL} target="_blank" rel="noopener noreferrer" aria-label="Valid8 homepage">
+									<img
+										src={PUBLICATION_LOGO}
+										alt={publication.title}
+										className="h-8 w-auto object-contain"
+									/>
+								</a>
 							) : (
-								<Link href={'/'} className="text-slate-50">
+								<a href={VALID8_BASE_URL} target="_blank" rel="noopener noreferrer" className="text-slate-50">
 									{publication.title}
-								</Link>
+								</a>
 							)}
 						</div>
 						<p className="mb-4 max-w-md text-slate-400">
@@ -40,19 +42,34 @@ export const Footer = () => {
 							<h4 className="mb-4 font-semibold text-slate-200">Product</h4>
 							<ul className="space-y-2 text-slate-400">
 								<li>
-									<Link href="/features" className="transition-colors hover:text-white">
+									<a
+										href={`${VALID8_BASE_URL}/features`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
 										Features
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link href="/#pricing" className="transition-colors hover:text-white">
+									<a
+										href={`${VALID8_BASE_URL}/#pricing`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
 										Pricing
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link href="/docs" className="transition-colors hover:text-white">
+									<a
+										href={`${VALID8_BASE_URL}/docs`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
 										Documentation
-									</Link>
+									</a>
 								</li>
 								<li>
 									<a
@@ -72,24 +89,44 @@ export const Footer = () => {
 							<h4 className="mb-4 font-semibold text-slate-200">Company</h4>
 							<ul className="space-y-2 text-slate-400">
 								<li>
-									<Link href="/#team" className="transition-colors hover:text-white">
+									<a
+										href={`${VALID8_BASE_URL}/#team`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
 										Team
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link href="/investors" className="transition-colors hover:text-white">
+									<a
+										href={`${VALID8_BASE_URL}/investors`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
 										Investors
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link href="/privacy" className="transition-colors hover:text-white">
+									<a
+										href={`${VALID8_BASE_URL}/privacy`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
 										Privacy Policy
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link href="/terms" className="transition-colors hover:text-white">
+									<a
+										href={`${VALID8_BASE_URL}/terms`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
 										Terms of Service
-									</Link>
+									</a>
 								</li>
 							</ul>
 						</div>

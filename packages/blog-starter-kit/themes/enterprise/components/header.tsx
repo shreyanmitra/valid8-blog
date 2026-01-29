@@ -1,6 +1,4 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import { useState } from 'react';
-import Link from 'next/link';
 import { PublicationNavbarItem } from '../generated/graphql';
 import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
@@ -18,8 +16,43 @@ export const Header = () => {
 	const visibleItems = navbarItems.slice(0, 6);
 	const hiddenItems = navbarItems.slice(3);
 
+	const VALID8_BASE_URL = 'https://valid8code.ai';
+	const VALID8_BLOG_URL = 'https://blogs.valid8code.ai';
+
 	const navList = (
 		<ul className="flex flex-row items-center gap-4">
+			<li>
+				<a href={`${VALID8_BASE_URL}/features`} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white">
+					Features
+				</a>
+			</li>
+			<li>
+				<a href={VALID8_BLOG_URL} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white">
+					Blog
+				</a>
+			</li>
+			<li>
+				<a href={`${VALID8_BASE_URL}/#team`} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white">
+					Team
+				</a>
+			</li>
+			<li>
+				<a href={`${VALID8_BASE_URL}/#pricing`} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white">
+					Pricing
+				</a>
+			</li>
+			<li>
+				<a href={`${VALID8_BASE_URL}/docs`} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white">
+					Docs
+				</a>
+			</li>
+			<li>
+				<a href={`${VALID8_BASE_URL}/investors`} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white">
+					Investors
+				</a>
+			</li>
+
+			{/* Keep any publication-configured external links (if present) */}
 			{visibleItems.map((item) => (
 				<li key={item.url}>
 					<a
@@ -80,12 +113,14 @@ export const Header = () => {
 
 						<div className="hidden items-center gap-4 md:flex">
 							<nav>{navList}</nav>
-							<Link
-								href={process.env.NEXT_PUBLIC_BASE_URL || '/'}
+							<a
+								href={VALID8_BASE_URL}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border border-blue-600 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
 							>
 								Book a demo
-							</Link>
+							</a>
 						</div>
 					</div>
 				</Container>

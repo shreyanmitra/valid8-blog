@@ -1,5 +1,4 @@
 import { resizeImage } from '@starter-kit/utils/image';
-import Link from 'next/link';
 import { useAppContext } from './contexts/appContext';
 import { PublicationFragment } from '../generated/graphql';
 
@@ -13,10 +12,17 @@ const getPublicationLogo = (publication: PublicationFragment, isSidebar?: boolea
 export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 	const { publication } = useAppContext();
 	const PUBLICATION_LOGO = getPublicationLogo(publication, isSidebar);
+	const VALID8_BASE_URL = 'https://valid8code.ai';
 
 	return (
 		<h1 className="relative">
-			<Link href={'/'} aria-label={`${publication.title} blog home page`} className="flex items-center gap-2">
+			<a
+				href={VALID8_BASE_URL}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Valid8 homepage"
+				className="flex items-center gap-2"
+			>
 				{PUBLICATION_LOGO ? (
 					<img
 						className="h-10 w-auto object-contain"
@@ -32,7 +38,7 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 						{publication.title}
 					</span>
 				)}
-			</Link>
+			</a>
 		</h1>
 	);
 };
