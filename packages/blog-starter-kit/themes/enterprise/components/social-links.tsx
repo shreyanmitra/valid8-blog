@@ -10,7 +10,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 	return (
 		<>
 			<div
-				className={`col-span-1 flex flex-row flex-wrap gap-1 text-slate-300 md:flex-nowrap ${
+				className={`col-span-1 flex flex-row flex-wrap gap-3 text-slate-400 md:flex-nowrap ${
 					isSidebar ? 'justify-start' : 'justify-end'
 				}`}
 			>
@@ -22,7 +22,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="Find us on Twitter, external website, opens in new tab"
-								className="flex flex-row items-center justify-center rounded-md border border-slate-700 bg-transparent p-2 transition-colors hover:bg-slate-800"
+								className="transition-colors hover:text-blue-500"
 							>
 								<XSVG className="h-5 w-5 stroke-current" />
 							</a>
@@ -33,7 +33,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="Find us on Github, external website, opens in new tab"
-								className="flex flex-row items-center justify-center rounded-md border border-slate-700 bg-transparent p-2 transition-colors hover:bg-slate-800"
+								className="transition-colors hover:text-blue-500"
 							>
 								<GithubSVG className="h-5 w-5 stroke-current" />
 							</a>
@@ -44,7 +44,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="Find us on Linkedin, external website, opens in new tab"
-								className="flex flex-row items-center justify-center rounded-md border border-slate-700 bg-transparent p-2 transition-colors hover:bg-slate-800"
+								className="transition-colors hover:text-blue-500"
 							>
 								<LinkedinSVG className="h-5 w-5 stroke-current" />
 							</a>
@@ -55,7 +55,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="Find us on Hashnode, external website, opens in new tab"
-								className="flex flex-row items-center justify-center rounded-md border border-slate-700 bg-transparent p-2 transition-colors hover:bg-slate-800"
+								className="transition-colors hover:text-blue-500"
 							>
 								<HashnodeSVG className="h-5 w-5 stroke-current" />
 							</a>
@@ -69,7 +69,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="Open blog XML Feed, opens in new tab"
-					className="flex flex-row items-center justify-center rounded-md border border-slate-700 bg-transparent p-2 transition-colors hover:bg-slate-800"
+					className="transition-colors hover:text-blue-500"
 				>
 					<RssSVG className="h-5 w-5 stroke-current" />
 				</Link>

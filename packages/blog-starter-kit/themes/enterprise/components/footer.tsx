@@ -8,86 +8,102 @@ export const Footer = () => {
 	const PUBLICATION_LOGO = publication.preferences.logo;
 	return (
 		<footer className="border-t border-slate-800 bg-slate-950 py-12">
-			<Container>
-				<div className="grid gap-8 md:grid-cols-4 md:gap-10">
+			<div className="container mx-auto px-4">
+				<div className="mb-8 grid gap-8 md:grid-cols-4">
 					{/* Brand */}
 					<div className="md:col-span-2">
-						{PUBLICATION_LOGO ? (
-							<Link
-								href={'/'}
-								aria-label={`${publication.title} home page`}
-								className="mb-4 inline-flex items-center gap-3"
-							>
-								<img className="block h-8 w-auto" src={PUBLICATION_LOGO} alt={publication.title} />
-							</Link>
-						) : (
-							<Link
-								href={'/'}
-								aria-label={`${publication.title} home page`}
-								className="mb-4 inline-flex items-center text-lg font-semibold text-slate-50"
-							>
-								{publication.title}
-							</Link>
-						)}
-
-						<p className="max-w-md text-sm leading-relaxed text-slate-400">
-							Latest updates, product notes, and engineering stories from {publication.title}.
+						<div className="mb-4 flex items-center gap-2">
+							{PUBLICATION_LOGO ? (
+								<img
+									src={PUBLICATION_LOGO}
+									alt={publication.title}
+									className="h-8 w-auto object-contain"
+								/>
+							) : (
+								<Link href={'/'} className="text-slate-50">
+									{publication.title}
+								</Link>
+							)}
+						</div>
+						<p className="mb-4 max-w-md text-slate-400">
+							Securing your code in the new era of generative AI. Built by student researchers at the
+							University of Washington&apos;s Paul G. Allen School of Computer Science &amp; Engineering.
 						</p>
-
-						<div className="mt-4">
+						<div className="flex items-center gap-3">
 							<SocialLinks />
 						</div>
 					</div>
 
-					{/* Links */}
-					<div>
-						<p className="mb-4 font-semibold text-slate-200">Product</p>
-						<ul className="space-y-2 text-sm text-slate-400">
-							<li>
-								<a href="#" className="transition-colors hover:text-white">
-									Blog
-								</a>
-							</li>
-							<li>
-								<a href="#" className="transition-colors hover:text-white">
-									Documentation
-								</a>
-							</li>
-							<li>
-								<a href="#" className="transition-colors hover:text-white">
-									Changelog
-								</a>
-							</li>
-						</ul>
-					</div>
+					{/* Product and Company - Same Row */}
+					<div className="grid gap-8 md:col-span-2 md:grid-cols-2">
+						{/* Product */}
+						<div>
+							<h4 className="mb-4 font-semibold text-slate-200">Product</h4>
+							<ul className="space-y-2 text-slate-400">
+								<li>
+									<a href="/features" className="transition-colors hover:text-white">
+										Features
+									</a>
+								</li>
+								<li>
+									<a href="/#pricing" className="transition-colors hover:text-white">
+										Pricing
+									</a>
+								</li>
+								<li>
+									<a href="/docs" className="transition-colors hover:text-white">
+										Documentation
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://github.com/shreyanmitra/valid8-releases/releases"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="transition-colors hover:text-white"
+									>
+										Changelog
+									</a>
+								</li>
+							</ul>
+						</div>
 
-					<div>
-						<p className="mb-4 font-semibold text-slate-200">Company</p>
-						<ul className="space-y-2 text-sm text-slate-400">
-							<li>
-								<a href="#" className="transition-colors hover:text-white">
-									About
-								</a>
-							</li>
-							<li>
-								<a href="#" className="transition-colors hover:text-white">
-									Privacy Policy
-								</a>
-							</li>
-							<li>
-								<a href="#" className="transition-colors hover:text-white">
-									Terms
-								</a>
-							</li>
-						</ul>
+						{/* Company */}
+						<div>
+							<h4 className="mb-4 font-semibold text-slate-200">Company</h4>
+							<ul className="space-y-2 text-slate-400">
+								<li>
+									<a href="/#team" className="transition-colors hover:text-white">
+										Team
+									</a>
+								</li>
+								<li>
+									<a href="/investors" className="transition-colors hover:text-white">
+										Investors
+									</a>
+								</li>
+								<li>
+									<a href="/privacy" className="transition-colors hover:text-white">
+										Privacy Policy
+									</a>
+								</li>
+								<li>
+									<a href="/terms" className="transition-colors hover:text-white">
+										Terms of Service
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
-				<div className="mt-10 flex flex-col gap-3 border-t border-slate-800 pt-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-					<p>&copy; {new Date().getFullYear()} {publication.title}. All rights reserved.</p>
-					<p className="text-slate-500">Built with Headless Hashnode</p>
+				<div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 md:flex-row">
+					<p className="text-sm text-slate-400">
+						© {new Date().getFullYear()} {publication.title}. All rights reserved.
+					</p>
+					<p className="text-sm text-slate-500">Built with ❤️ at the University of Washington</p>
 				</div>
-			</Container>
+			</div>
 		</footer>
 	);
 };
