@@ -1,5 +1,6 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useState } from 'react';
+import Link from 'next/link';
 import { PublicationNavbarItem } from '../generated/graphql';
 import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
@@ -79,12 +80,12 @@ export const Header = () => {
 
 						<div className="hidden items-center gap-4 md:flex">
 							<nav>{navList}</nav>
-							<a
+							<Link
 								href={process.env.NEXT_PUBLIC_BASE_URL || '/'}
 								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border border-blue-600 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
 							>
 								Book a demo
-							</a>
+							</Link>
 						</div>
 					</div>
 				</Container>

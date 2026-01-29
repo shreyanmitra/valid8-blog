@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
 import { SocialLinks } from './social-links';
 
@@ -41,19 +40,19 @@ export const Footer = () => {
 							<h4 className="mb-4 font-semibold text-slate-200">Product</h4>
 							<ul className="space-y-2 text-slate-400">
 								<li>
-									<a href="/features" className="transition-colors hover:text-white">
+									<Link href="/features" className="transition-colors hover:text-white">
 										Features
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="/#pricing" className="transition-colors hover:text-white">
+									<Link href="/#pricing" className="transition-colors hover:text-white">
 										Pricing
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="/docs" className="transition-colors hover:text-white">
+									<Link href="/docs" className="transition-colors hover:text-white">
 										Documentation
-									</a>
+									</Link>
 								</li>
 								<li>
 									<a
@@ -73,24 +72,24 @@ export const Footer = () => {
 							<h4 className="mb-4 font-semibold text-slate-200">Company</h4>
 							<ul className="space-y-2 text-slate-400">
 								<li>
-									<a href="/#team" className="transition-colors hover:text-white">
+									<Link href="/#team" className="transition-colors hover:text-white">
 										Team
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="/investors" className="transition-colors hover:text-white">
+									<Link href="/investors" className="transition-colors hover:text-white">
 										Investors
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="/privacy" className="transition-colors hover:text-white">
+									<Link href="/privacy" className="transition-colors hover:text-white">
 										Privacy Policy
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="/terms" className="transition-colors hover:text-white">
+									<Link href="/terms" className="transition-colors hover:text-white">
 										Terms of Service
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>
