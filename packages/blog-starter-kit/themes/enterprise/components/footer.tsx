@@ -1,9 +1,14 @@
 import { useAppContext } from './contexts/appContext';
+import { PublicationFragment } from '../generated/graphql';
 import { SocialLinks } from './social-links';
+
+const getPublicationLogo = (publication: PublicationFragment) => {
+	return publication.preferences.darkMode?.logo || publication.preferences.logo;
+};
 
 export const Footer = () => {
 	const { publication } = useAppContext();
-	const PUBLICATION_LOGO = publication.preferences.logo;
+	const PUBLICATION_LOGO = getPublicationLogo(publication);
 	const VALID8_BASE_URL = 'https://valid8code.ai';
 	return (
 		<footer className="border-t border-slate-800 bg-slate-950 py-12">

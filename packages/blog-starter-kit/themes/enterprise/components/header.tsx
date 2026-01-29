@@ -114,12 +114,12 @@ export const Header = () => {
 						<div className="hidden items-center gap-4 md:flex">
 							<nav>{navList}</nav>
 							<a
-								href={VALID8_BASE_URL}
+								href={`${VALID8_BASE_URL}/downloads`}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border border-blue-600 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
 							>
-								Book a demo
+								Download
 							</a>
 						</div>
 					</div>
