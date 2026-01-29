@@ -7,8 +7,8 @@ import { Header } from '../../components/header';
 import { Layout } from '../../components/layout';
 import { MorePosts } from '../../components/more-posts';
 import {
-	Post,
-	Publication,
+	type Post,
+	type Publication,
 	TagPostsByPublicationDocument,
 	TagPostsByPublicationQuery,
 	TagPostsByPublicationQueryVariables,
