@@ -16,7 +16,7 @@ export const HeroPost = ({ title, coverImage, date, excerpt, slug }: Props) => {
 	const postURL = `/${slug}`;
 
 	return (
-		<section className="grid grid-cols-1 gap-5">
+		<section className="grid grid-cols-1 gap-5 rounded-xl border border-slate-800 bg-slate-900/40 p-4 transition-colors hover:border-blue-500/30 md:p-6">
 			<div className="col-span-1">
 				<CoverImage
 					title={title}
@@ -26,18 +26,18 @@ export const HeroPost = ({ title, coverImage, date, excerpt, slug }: Props) => {
 				/>
 			</div>
 			<div className="col-span-1 flex flex-col gap-2">
-				<h1 className="text-xl font-bold leading-snug text-slate-800 dark:text-neutral-50 lg:text-3xl">
+				<h1 className="text-xl font-bold leading-snug text-slate-50 lg:text-3xl">
 					<Link
 						href={postURL}
-						className="hover:text-primary-600 dark:hover:text-primary-500 leading-tight tracking-tight hover:underline"
+						className="leading-tight tracking-tight transition-colors hover:text-blue-300"
 					>
 						{title}
 					</Link>
 				</h1>
 				<Link href={postURL}>
-					<p className="text-md leading-snug text-slate-500 dark:text-neutral-400">{excerpt}</p>
+					<p className="text-md leading-snug text-slate-300">{excerpt}</p>
 				</Link>
-				<div className="text-sm font-semibold text-slate-500 dark:text-neutral-300">
+				<div className="text-sm font-semibold text-slate-400">
 					<Link href={postURL}>
 						<DateFormatter dateString={date} />
 					</Link>

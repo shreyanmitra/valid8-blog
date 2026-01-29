@@ -6,7 +6,7 @@ type Props = {
 
 export const PostTitle = ({ children }: Props) => {
 	return (
-		<div className="prose md:prose-xl dark:prose-invert prose-h1:text-center mx-auto max-w-screen-lg px-5">
+		<div className="prose mx-auto max-w-screen-lg px-4 prose-h1:text-center md:prose-xl dark:prose-invert">
 			<h1 className="">{children}</h1>
 		</div>
 	);

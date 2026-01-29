@@ -41,7 +41,7 @@ function PublicationSidebar(props: Props) {
 					className={`${
 						// When the sheet is mounted, we want to slide it in from the left.
 						!isMounted ? '-translate-x-96' : 'translate-x-0'
-					} fixed bottom-0 left-0 top-0 z-50 flex w-80 transform flex-col bg-white shadow-2xl duration-300 ease-out dark:border-neutral-800 dark:bg-neutral-950`}
+					} fixed bottom-0 left-0 top-0 z-50 flex w-80 transform flex-col border-r border-slate-800 bg-slate-950 shadow-2xl duration-300 ease-out`}
 				>
 					<div className="blog-sidebar-header w-full shrink-0 py-6">
 						<div className="flex items-center justify-between pl-8 pr-4">
@@ -51,10 +51,10 @@ function PublicationSidebar(props: Props) {
 
 							<DialogPrimitive.Close asChild>
 								<Button
-									type="outline"
+									type="ghost"
 									label=""
 									icon={<CloseSVG className="h-5 w-5 fill-current" />}
-									className="rounded-xl !border-transparent !px-3 !py-2 hover:bg-neutral-800 dark:text-white"
+									className="!px-3 !py-2"
 									onClick={() => {
 										toggleSidebar();
 									}}
@@ -64,15 +64,15 @@ function PublicationSidebar(props: Props) {
 					</div>
 
 					<div className="py-10 pl-8 pr-4">
-						<h2 className="mb-4 text-sm font-semibold uppercase text-slate-500 dark:text-slate-400">
+						<h2 className="mb-4 text-sm font-semibold uppercase text-slate-400">
 							Blog menu
 						</h2>
 						<section className="mb-10">
-							<ul className="flex flex-col gap-2 text-slate-700 dark:text-white">
+							<ul className="flex flex-col gap-2 text-white">
 								<li>
 									<Link
 										href="/"
-										className="transition-200 block truncate text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+										className="block truncate text-ellipsis whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800"
 									>
 										Home
 									</Link>
@@ -81,7 +81,7 @@ function PublicationSidebar(props: Props) {
 									<li key={item.url}>
 										<Link
 											href={item.url}
-											className="transition-200 block truncate text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+											className="block truncate text-ellipsis whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800"
 										>
 											{item.label}
 										</Link>
@@ -91,7 +91,7 @@ function PublicationSidebar(props: Props) {
 						</section>
 
 						{hasSocialLinks && (
-							<h2 className="mb-4 text-sm font-semibold uppercase leading-6 text-slate-500 dark:text-slate-400">
+							<h2 className="mb-4 text-sm font-semibold uppercase leading-6 text-slate-400">
 								Blog socials
 							</h2>
 						)}

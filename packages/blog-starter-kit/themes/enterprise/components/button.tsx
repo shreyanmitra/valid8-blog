@@ -15,27 +15,33 @@ type Props = {
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
 	({ label, type, icon, className, secondaryIcon, href, rel, as, target, onClick }, ref) => {
-		let buttonClassName: string;
+		const base =
+			'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border px-4 py-2 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:pointer-events-none disabled:opacity-50';
+
+		let variantClassName: string;
 
 		switch (type) {
 			case 'outline':
-				buttonClassName =
-					'text-slate-950 bg-transparent dark:border-neutral-800 hover:bg-slate-50 dark:bg-transparent dark:hover:bg-neutral-800 dark:text-white';
+				variantClassName =
+					'border-slate-700 bg-slate-800/50 text-slate-200 hover:bg-slate-700 hover:text-white';
 				break;
 
 			case 'primary':
-				buttonClassName =
-					'text-white bg-primary-600 hover:bg-primary-500 border-primary-600 dark:bg-primary-600 dark:text-white';
+				variantClassName = 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700';
 				break;
 
 			case 'outline-dark':
-				buttonClassName =
-					'text-white bg-transparent hover:bg-white hover:text-black dark:bg-neutral-900 dark:text-white';
+				variantClassName =
+					'border-slate-700 bg-transparent text-slate-200 hover:bg-slate-800 hover:text-white';
+				break;
+
+			case 'ghost':
+				variantClassName =
+					'border-transparent bg-transparent text-slate-300 hover:bg-slate-800/50 hover:text-white';
 				break;
 
 			default:
-				buttonClassName =
-					'text-white bg-primary-600 hover:bg-primary-500 border-primary-600 dark:bg-primary-600 dark:text-white';
+				variantClassName = 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700';
 		}
 
 		if (as === 'a') {
@@ -44,9 +50,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 					href={href}
 					rel={rel}
 					target={target}
-					className={`flex flex-row items-center justify-start gap-2 rounded-full border px-2 py-2 text-sm font-semibold transition-colors duration-200 md:px-5 md:py-3 md:text-base ${buttonClassName} ${
+					className={`${base} ${variantClassName} ${
 						secondaryIcon ? `md:justify-between` : `md:justify-center`
-					}  ${className}`}
+					} ${className ?? ''}`}
 				>
 					<div className="flex flex-row items-center gap-2">
 						{icon && <div className="shrink-0">{icon}</div>}
@@ -61,9 +67,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			<button
 				ref={ref}
 				onClick={onClick}
-				className={`flex flex-row items-center justify-start gap-2 rounded-full border px-2 py-2 text-sm font-semibold transition-colors duration-200 md:px-5 md:py-3 md:text-base ${buttonClassName} ${
+				className={`${base} ${variantClassName} ${
 					secondaryIcon ? `md:justify-between` : `md:justify-center`
-				}  ${className}`}
+				} ${className ?? ''}`}
 			>
 				<div className="flex flex-row items-center gap-2">
 					{icon && <div className="shrink-0">{icon}</div>}

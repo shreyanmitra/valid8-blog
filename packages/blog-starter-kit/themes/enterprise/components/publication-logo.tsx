@@ -15,11 +15,11 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 	const PUBLICATION_LOGO = getPublicationLogo(publication, isSidebar);
 
 	return (
-		<h1 className="relative w-full">
+		<h1 className="relative">
 			<Link
 				href={'/'}
 				aria-label={`${publication.title} blog home page`}
-				className="flex flex-row items-center justify-center gap-3"
+				className="flex flex-row items-center gap-3"
 			>
 				{PUBLICATION_LOGO ? (
 					<>
@@ -33,7 +33,7 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 				) : (
 					<span
 						className={`block text-2xl font-semibold ${
-							isSidebar ? 'text-black dark:text-white' : 'text-white md:text-4xl'
+							isSidebar ? 'text-white' : 'text-white md:text-4xl'
 						}`}
 					>
 						{publication.title}

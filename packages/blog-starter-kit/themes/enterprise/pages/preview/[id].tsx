@@ -37,7 +37,7 @@ export default function Post({ publication, post }: Props) {
 		<li key={tag.id}>
 			<Link
 				href={`/tag/${tag.slug}`}
-				className="block rounded-full border px-2 py-1 font-medium hover:bg-slate-50 dark:border-neutral-800 dark:hover:bg-neutral-800 md:px-4"
+				className="block rounded-md border border-slate-700 bg-slate-900/50 px-3 py-1 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800"
 			>
 				#{tag.slug}
 			</Link>
@@ -48,7 +48,7 @@ export default function Post({ publication, post }: Props) {
 		<AppProvider publication={publication}>
 			<Layout>
 				<Header />
-				<Container className="pt-10">
+				<Container className="pb-12 pt-10">
 					<article className="flex flex-col items-start gap-10 pb-10">
 						<Head>
 							<title>{title}</title>
@@ -63,7 +63,7 @@ export default function Post({ publication, post }: Props) {
 							readTimeInMinutes={post.readTimeInMinutes}
 						/>
 						<MarkdownToHtml contentMarkdown={post.content.markdown} />
-						<div className="mx-auto w-full px-5 text-slate-600 dark:text-neutral-300 md:max-w-screen-md">
+						<div className="mx-auto w-full px-4 text-slate-300 md:max-w-screen-md">
 							<ul className="flex flex-row flex-wrap items-center gap-2">{tagsList}</ul>
 						</div>
 					</article>

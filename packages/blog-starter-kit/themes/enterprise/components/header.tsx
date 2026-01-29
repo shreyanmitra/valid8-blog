@@ -27,14 +27,14 @@ export const Header = () => {
 	};
 
 	const navList = (
-		<ul className="flex flex-row items-center gap-2 text-white">
+		<ul className="flex flex-row items-center gap-1">
 			{visibleItems.map((item) => (
 				<li key={item.url}>
 					<a
 						href={item.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="transition-200 block max-w-[200px] truncate text-ellipsis whitespace-nowrap rounded-full p-2 transition-colors hover:bg-white hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+						className="block max-w-[200px] truncate text-ellipsis whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800/50 hover:text-white"
 					>
 						{item.label}
 					</a>
@@ -45,14 +45,14 @@ export const Header = () => {
 				<li>
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger asChild>
-							<button className="transition-200 block rounded-full p-2 transition-colors hover:bg-white hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white">
+							<button className="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800/50 hover:text-white">
 								More
 							</button>
 						</DropdownMenu.Trigger>
 
 						<DropdownMenu.Portal>
 							<DropdownMenu.Content
-								className="w-48 rounded border border-gray-300 bg-white text-neutral-950 shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
+								className="w-56 overflow-hidden rounded-md border border-slate-700 bg-slate-900 text-slate-50 shadow-xl"
 								align="end"
 								sideOffset={5}
 							>
@@ -62,7 +62,7 @@ export const Header = () => {
 											href={item.url}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="transition-200 block truncate p-2 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+											className="block truncate px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800"
 										>
 											{item.label}
 										</a>
@@ -77,34 +77,34 @@ export const Header = () => {
 	);
 
 	return (
-		<header className="border-b bg-slate-950 py-10 dark:border-neutral-800 dark:bg-neutral-900">
-			<Container className="grid grid-cols-4 gap-5 px-5">
-				<div className="col-span-2 flex flex-1 flex-row items-center gap-2 lg:col-span-1">
-					<div className="lg:hidden">
-						<Button
-							type="outline"
-							label=""
-							icon={<HamburgerSVG className="h-5 w-5 stroke-current" />}
-							className="rounded-xl border-transparent !px-3 !py-2 text-white hover:bg-slate-900 dark:hover:bg-neutral-800"
-							onClick={toggleSidebar}
-						/>
+		<>
+			<nav className="fixed top-0 z-50 w-full border-b border-slate-800 bg-slate-900/50 backdrop-blur">
+				<Container className="flex h-16 items-center justify-between">
+					<div className="flex items-center gap-2">
+						<div className="lg:hidden">
+							<Button
+								type="ghost"
+								label=""
+								icon={<HamburgerSVG className="h-5 w-5 stroke-current" />}
+								className="!px-3 !py-2"
+								onClick={toggleSidebar}
+							/>
 
-						{isSidebarVisible && (
-							<PublicationSidebar navbarItems={navbarItems} toggleSidebar={toggleSidebar} />
-						)}
-					</div>
-					<div className="hidden lg:block">
+							{isSidebarVisible && (
+								<PublicationSidebar navbarItems={navbarItems} toggleSidebar={toggleSidebar} />
+							)}
+						</div>
 						<PublicationLogo />
 					</div>
-				</div>
-				<div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
-					<nav className="hidden lg:block">{navList}</nav>
-					<Button href={baseUrl} as="a" type="primary" label="Book a demo" />
-				</div>
-			</Container>
-			<div className="mt-5 flex justify-center lg:hidden">
-				<PublicationLogo />
-			</div>
-		</header>
+
+					<div className="flex items-center gap-3">
+						<nav className="hidden lg:block">{navList}</nav>
+						<Button href={baseUrl} as="a" type="primary" label="Book a demo" />
+					</div>
+				</Container>
+			</nav>
+			{/* Spacer for fixed nav */}
+			<div className="h-16" />
+		</>
 	);
 };

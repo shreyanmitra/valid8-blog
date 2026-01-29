@@ -17,7 +17,7 @@ export const PostComments = () => {
 		return (
 			<div
 				key={comment.id}
-				className="flex flex-col gap-5 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-neutral-800 dark:bg-neutral-900"
+				className="flex flex-col gap-5 rounded-xl border border-slate-800 bg-slate-900/50 p-5"
 			>
 				<Avatar
 					username={comment.author.username}
@@ -26,7 +26,7 @@ export const PostComments = () => {
 					picture={comment.author.profilePicture}
 				/>
 				<div className="hashnode-content-style" dangerouslySetInnerHTML={{ __html: content }}></div>
-				<div className="flex flex-row gap-5 font-medium text-slate-600 dark:text-neutral-400">
+				<div className="flex flex-row gap-5 font-medium text-slate-400">
 					{comment.totalReactions > 1 && (
 						<a href={discussionUrl} target="_blank" rel="noopener noreferrer">
 							{comment.totalReactions} likes
@@ -38,8 +38,8 @@ export const PostComments = () => {
 	});
 
 	return (
-		<div className="mx-auto flex w-full max-w-screen-md flex-col gap-5 px-5">
-			<h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-neutral-100">
+		<div className="mx-auto flex w-full max-w-screen-md flex-col gap-5 px-4">
+			<h3 className="text-xl font-bold tracking-tight text-slate-50">
 				Comments ({post.comments.totalDocuments})
 			</h3>
 			<Button
@@ -51,7 +51,7 @@ export const PostComments = () => {
 				label="Discuss on Hashnode"
 				secondaryIcon={<ExternalArrowSVG className="h-5 w-5 stroke-current" />}
 			/>
-			<div className="flex flex-col gap-5 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-neutral-800 dark:bg-neutral-900">
+			<div className="flex flex-col gap-5 rounded-xl border border-slate-800 bg-slate-950/40 p-5">
 				{commentsList}
 			</div>
 		</div>
