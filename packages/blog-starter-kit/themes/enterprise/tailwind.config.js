@@ -30,6 +30,12 @@ module.exports = {
 					  margin: '1rem 0',
 					  'word-break': 'break-word',
 					},
+					'div[data-node-type="callout"] strong': {
+					  color: '#0f172a',
+					},
+					'div[data-node-type="callout"] b': {
+					  color: '#0f172a',
+					},
 					'div[data-node-type="callout-emoji"]': {
 					  background: '#E2E8F0',
 					  'border-radius': '0.5rem',
