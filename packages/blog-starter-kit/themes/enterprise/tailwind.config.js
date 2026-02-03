@@ -21,7 +21,7 @@ module.exports = {
 					  display: 'flex',
 					  'justify-content': 'flex-start',
 					  'align-items': 'flex-start',
-					  'background-color': '#475569',
+					  'background-color': 'rgb(9, 9, 11)',
 					  border: '1px solid #64748b',
 					  padding: ' 1rem 1.5rem',
 					  gap: '0.5rem',
