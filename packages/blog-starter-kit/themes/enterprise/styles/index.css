@@ -9,7 +9,7 @@
 
 	/* Match valid8-lite landing page: dark-first UI */
 	body {
-		background-color: rgb(9, 9, 11);
+		background-color: #09090B;
 		@apply text-slate-50 antialiased;
 	}
 }
