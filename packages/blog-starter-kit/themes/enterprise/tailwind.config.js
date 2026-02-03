@@ -23,6 +23,7 @@ module.exports = {
 					  'align-items': 'flex-start',
 					  'background-color': '#F8FAFC',
 					  border: '1px solid #E2E8F0',
+					  color: '#1e293b',
 					  padding: ' 1rem 1.5rem',
 					  gap: '0.5rem',
 					  'border-radius': '0.5rem',
