@@ -22,7 +22,7 @@ module.exports = {
 					  'justify-content': 'flex-start',
 					  'align-items': 'flex-start',
 					  'background-color': 'rgb(9, 9, 11)',
-					  border: '1px solid #64748b',
+					  border: '1px solid rgb(39, 39, 42)',
 					  padding: ' 1rem 1.5rem',
 					  gap: '0.5rem',
 					  'border-radius': '0.5rem',
